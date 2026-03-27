@@ -1035,10 +1035,13 @@ msg+='📍 *State:* '+encodeURIComponent(state)+'%0A';
 msg+='📮 *Pincode:* '+encodeURIComponent(pincode)+'%0A';
 msg+='━━━━━━━━━━━━━━━%0A';
 msg+='✅ Payment: Cash on Delivery';
-fbq('track', 'CompleteRegistration');
+fbq('track', 'Purchase', {
+    value: 499.00,   // Product price
+    currency: 'INR'   // Currency
+});
 window.open('https://wa.me/917978166879?text='+msg,'_blank');
 return false;
-};
+
 
 
 /* ===== CTA CLICK TRACKING ===== */
