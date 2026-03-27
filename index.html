@@ -355,7 +355,7 @@ src="https://www.facebook.com/tr?id=2017996019072597&ev=PageView&noscript=1"
 <!-- ========== TRUST VIDEO TOP ========== -->
 <section class="trust-video-top" id="trust-video">
 <div class="trust-video-container" id="trustVideoBox" onclick="togglePlayPause()" style="cursor: pointer; position: relative; overflow: hidden; border-radius: 10px;">
-<video id="trustVideo" playsinline loop style="width: 100%; border-radius: 10px; display: block;">
+<video id="trustVideo" playsinline loop muted style="width: 100%; border-radius: 10px; display: block;">
     <source src="babasale1.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
@@ -1319,6 +1319,16 @@ window.playTrustVideo = function() {
     window.togglePlayPause();
 };
 
+</script>
+    <script>
+function togglePlayPause() {
+  var video = document.getElementById("trustVideo");
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}
 </script>
 </body>
 </html>
