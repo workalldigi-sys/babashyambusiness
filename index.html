@@ -1045,6 +1045,7 @@ return false;
 
 
 /* ===== CTA CLICK TRACKING ===== */
+    ( function() {
 window.trackClick=function(label){
 var clicks=parseInt(localStorage.getItem('jbh_clicks')||'0');
 clicks++;
@@ -1320,13 +1321,16 @@ window.playTrustVideo = function() {
 };
 
 </script>
-    <script>
+<script>
 function togglePlayPause() {
   var video = document.getElementById("trustVideo");
-  if (video.paused) {
-    video.play();
-  } else {
-    video.pause();
+  if (video) {
+    video.muted = false; // <--- Ye line awaaz layegi!
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
   }
 }
 </script>
